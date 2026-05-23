@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0a0a1a">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <title>AI Society</title>
+</head>
+<body>
+    <div id="app">
+        <div id="header">
+            <h1>🧠 AI Society</h1>
+            <button id="btnSettings" onclick="toggleSettings()">⚙️</button>
+        </div>
+        
+        <div id="chat"></div>
+        
+        <div id="controls">
+            <button onclick="startConversation()">▶ Запустить</button>
+            <button onclick="stopConversation()">⏸ Стоп</button>
+            <button onclick="clearChat()">🗑 Очистить</button>
+        </div>
+        
+        <div id="inputArea">
+            <input id="userInput" placeholder="Вмешаться в разговор..." onkeydown="if(event.key==='Enter')sendMessage()">
+            <button onclick="sendMessage()">💬</button>
+        </div>
+        
+        <div id="settings" style="display:none;">
+            <h3>👥 Персонажи</h3>
+            <div id="characters"></div>
+            <button onclick="addCharacter()">+ Создать</button>
+            <h3>🔑 API ключ</h3>
+            <input id="apiKey" type="password" placeholder="Ключ Groq API">
+            <button onclick="saveSettings()">💾 Сохранить</button>
+            <button onclick="toggleSettings()">❌ Закрыть</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
