@@ -1,0 +1,139 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0a0a1a;
+    color: #ddd;
+    height: 100vh;
+    overflow: hidden;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 600px;
+    margin: 0 auto;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #111133;
+    border-bottom: 1px solid #222;
+}
+#header h1 { font-size: 18px; }
+#header button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+#chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.msg {
+    padding: 10px 14px;
+    border-radius: 14px;
+    max-width: 85%;
+    animation: fadeIn 0.3s;
+    font-size: 14px;
+    line-height: 1.4;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.msg.zero { background: #1a1a3a; border-left: 3px solid #ff4444; align-self: flex-start; }
+.msg.nova { background: #1a2a1a; border-left: 3px solid #44ff44; align-self: flex-start; }
+.msg.atlas { background: #1a1a2a; border-left: 3px solid #4488ff; align-self: flex-start; }
+.msg.vega { background: #2a1a2a; border-left: 3px solid #ff88cc; align-self: flex-start; }
+.msg.axel { background: #2a2a1a; border-left: 3px solid #ffaa44; align-self: flex-start; }
+.msg.user { background: #223355; align-self: flex-end; }
+.msg .name { font-weight: bold; font-size: 12px; margin-bottom: 3px; }
+#controls {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    border-top: 1px solid #222;
+}
+#controls button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #111133;
+    color: #ddd;
+    cursor: pointer;
+    font-size: 13px;
+}
+#controls button:active { opacity: 0.8; }
+#inputArea {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    border-top: 1px solid #222;
+}
+#inputArea input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #111133;
+    color: #ddd;
+    outline: none;
+}
+#inputArea button {
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #335;
+    color: #ddd;
+    border: none;
+    cursor: pointer;
+}
+#settings {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #111133;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    z-index: 10;
+}
+#settings h3 { margin: 10px 0 5px; font-size: 14px; }
+#settings input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #0a0a1a;
+    color: #ddd;
+}
+#settings button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    background: #335;
+    color: #ddd;
+    border: none;
+    cursor: pointer;
+}
+.char-row {
+    display: flex;
+    gap: 5px;
+    margin: 5px 0;
+}
+.char-row input {
+    flex: 1;
+    padding: 6px;
+}
